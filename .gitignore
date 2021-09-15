@@ -291,3 +291,5 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/macos,pycharm,python,jupyternotebooks
 prac/
 study/effectiv_python/080235/
+study/effectiv_python/.idea/
+.idea/
