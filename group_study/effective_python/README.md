@@ -1,3 +1,4 @@
+# Effective Python
 # 27.
 
 map과 filter보다는 컴프리헨션을 사용하라!
