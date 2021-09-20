@@ -1,3 +1,5 @@
+# Day 09
+
 # 배울 것
 
 - 결측치 (Missing Data)
@@ -171,6 +173,7 @@ ctg.value_counts().sort_index()
 
 - 이 부분 다시 이해해보기
 - 이 그림의 의미는?
+ 
 # Day 08
 
 - Pandas, Matplotlib, Seaborn 이용 그래프 그리기
