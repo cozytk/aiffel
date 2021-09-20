@@ -439,3 +439,252 @@ def decode(data, default=None):
 ```
 
 - 매개변수를 두개 활용, default를 내가 원하는 것으로 지정
+
+# Better Way 43
+
+*커스텀 컨테이너 타입은 collections.abc를 상속하라*
+
+# 세줄 요약
+
+- 간편하게 사용할 경우에는 파이썬 컨테이너 타입(리스트나 딕셔너리 등)을 직접 상속하라.
+- 커스텀 컨테이너를 제대로 구현하려면 수많은 메서드를 구현 필요.
+- collection.abc에 정의된 인터페이스를 상속하면 필요한 인터페이스와 기능을 제대로 구현하도록 보장!
+
+▶️ **상황**
+
+*음.. 나는 list자료형인데 각 원소가 몇개나 있는지 dictionary로 반환해주는 메소드가 필요해*
+
+```python
+class FrequencyList(list):
+    def __init__(self, members):
+        super().__init__(members)
+
+    def frequency(self):
+        counts = {}
+        for item in self:
+            counts[item] = counts.get(item, 0) + 1
+        return counts
+```
+
+```python
+foo = FrequencyList(['a', 'b', 'a', 'c', 'b', 'a', 'd'])
+print('길이: ', len(foo))
+
+foo.pop()
+print('pop한 다음:', repr(foo))
+print('빈도:', foo.frequency())
+print(a[0])
+>>>
+
+길이:  7
+pop한 다음: ['a', 'b', 'a', 'c', 'b', 'a']
+빈도: {'a': 3, 'b': 2, 'c': 1}
+'a'
+```
+
+✅ `pop()` 과 같은 기존의 **list 메소드와 특징**들을 그대로 사용할 수 있음!
+
+### 욕심을 부리기 시작
+
+▶️ **상황**
+
+*아.. 또 list를 상속받아 하위 클래스로 만들고 싶지는 않은데 인덱싱이 가능한 시퀀스 형이었으면 좋겠네*
+
+→ 시퀀스형 이진트리 만들어보자
+
+```python
+class BinaryNode:
+    def __init__(self, value, left=None, right=None):
+        self.value = value
+        self.left = left
+        self.right = right
+```
+
+*혹시 인덱싱이 되지 않을까?*
+
+```python
+a = BinaryNode(10, 5, 20)
+print(a[0])
+
+>>>
+/var/folders/z_/fl1l3lj16n55t2wwqw4xkcw80000gn/T/ipykernel_99138/3955354455.py in <module>
+      1 a = BinaryNode(10, 5, 20)
+----> 2 print(a[0])
+
+TypeError: 'BinaryNode' object is not subscriptable
+```
+
+### `__getitem__(0)` 특별메서
+
+- 위의 특별메서드를 클래스에 구현하면 시퀀스처럼 작동할 수 있음!
+
+```python
+class IndexableNode(BinaryNode):
+    def _traverse(self):
+        if self.left is not None:
+            yield from self.left._traverse()
+        yield self
+        if self.right is not None:
+            yield from self.right._traverse()
+
+    def __getitem__(self, index):
+        for i, item in enumerate(self._traverse()):
+            if i == index:
+                return item.value
+        raise IndexError(f'인덱스 범위 초과: {index}')
+```
+
+변수 `tree`에 이진트리를 생성해서 만들어 줌
+
+```python
+tree = IndexableNode(
+    10,
+    left=IndexableNode(
+        5,
+        left=IndexableNode(2),
+        right=IndexableNode(
+            6,
+            right=IndexableNode(7))),
+    right=IndexableNode(
+        15,
+        left=IndexableNode(11)))
+```
+
+위의 이진트리 객체에 속성인 `left`나 `right`를 사용해 순회해도 되지만, 우리는 `__gettime__`을 만들어주어 리스트처럼 접근!
+
+```python
+print('LRR:', tree.left.right.right.value)
+print('인덱스 0:', tree[0])
+print('인덱스 1:', tree[1])
+print('11이 트리 안에 있나?', 11 in tree)
+print('17이 트리 안에 있나?', 17 in tree)
+print('트리:', list(tree))
+>>>
+
+LRR: 7
+인덱스 0: 2
+인덱스 1: 5
+11이 트리 안에 있나? True
+17이 트리 안에 있나? False
+트리: [2, 5, 6, 7, 10, 11, 15]
+```
+
+❗**문제**
+
+`__getitem()__` 을 구현하는 것 만으로는 모든 시퀀스 의미 구조(시퀀스를 활용한 함수들)를 제공할 수는 없다.
+
+```python
+print(len(tree))
+---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+/var/folders/z_/fl1l3lj16n55t2wwqw4xkcw80000gn/T/ipykernel_99138/2973750518.py in <module>
+----> 1 print(len(tree))
+
+TypeError: object of type 'IndexableNode' has no len(
+```
+
+- `len()` 내장 함수는 `__len__` 이라는 특별 매서드를 구현해야 제대로 작동한다.
+
+`len()` 을 지원하는 `IndexableNode`의 하위객체 `SequenceNode`를 만들자!
+
+```python
+class SequenceNode(IndexableNode):
+    def __len__(self):
+        for count, _ in enumerate(self._traverse(), 1):
+            print(count, _.value)
+        return count
+```
+
+※ `enumerate()` 함수의 두번째 매개변수를 주면 그 인덱스부터 시작함!
+
+```python
+tree = SequenceNode(
+    10,
+    left=SequenceNode(
+        5,
+        left=SequenceNode(2),
+        right=SequenceNode(
+            6,
+            right=SequenceNode(7))),
+    right=SequenceNode(
+        15,
+        left=SequenceNode(11))
+)
+
+print('트리 길이:', len(tree)
+>>>
+
+1 2
+2 5
+3 6
+4 7
+5 10
+6 11
+7 15
+트리 길이: 7
+```
+
+❗ **문제**
+
+- `__getitem__` 과 `__len__` 을 구현했지만, 클래스가 올바른 시퀀스가 되려면 아직 부족함
+    - `count()` 나 `index()` 메서드도 들어있지 않음
+
+✅ **해결**
+
+- `collections.abs` 모듈을 사용하면 부족한 시퀀스형이 무엇이 있는지 알려줌
+- `Sequence` 라는 추상 기반 클래스의 하위 클래스로 만들면 됨
+
+```python
+from collections.abc import Sequence
+
+class BadType(Sequence):
+    pass
+
+foo = BadType()
+>>>
+
+TypeError                                 Traceback (most recent call last)
+
+/var/folders/z_/fl1l3lj16n55t2wwqw4xkcw80000gn/T/ipykernel_99138/3621480486.py in <module>
+      5 
+      6 # 오류가 나는 부분. 오류를 보고 싶으면 커멘트를 해제할것
+----> 7 foo = BadType()
+      8 
+      9 
+
+TypeError: Can't instantiate abstract class BadType with abstract methods 
+__getitem__, __len__
+```
+
+```python
+class BetterNode(SequenceNode, Sequence):
+    pass
+
+tree = BetterNode(
+    10,
+    left=BetterNode(
+        5,
+        left=BetterNode(2),
+        right=BetterNode(
+            6,
+            right=BetterNode(7))),
+    right=BetterNode(
+        15,
+        left=BetterNode(11))
+)
+```
+
+🔚 **결과**
+
+collections.abc 모듈에서 요구하는 함수들을 다 구현했다면, `index` 나  `count` 와 같은 추가 메서드 구현을 거저 얻을 수 있음!
+
+```python
+print('7의 인덱스:', tree.index(7))
+print('10의 개수:', tree.count(10))
+>>>
+
+7의 인덱스: 3
+10의 개수: 1
+```
