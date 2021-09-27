@@ -1,3 +1,4 @@
+
 # 👨🏻‍🎓 What I've learned in aiffel
 이 저장소는 aiffel에서 공부한 내용들을 저장한 저장소입니다
 
@@ -10,17 +11,29 @@
 
 |              |               Name                    |      Description        |
 |:------------:|:---------------------------------------------:|:----------------------:|
-|01|[인공지능 개발자 첫 걸음](./fundermentals/01)            | Ubuntu, Python, Tenrminal, Anaconda|
-|02|[터미널로 배우는 리눅스](./fundermentals/02)            | Linux, Process, Thread, File System|
-|03|[개발자를 위한 첫 번째 필수 교양](./fundermentals/03)            | Git, Jupyter notebook |
-|04|[파이썬으로 코딩 시작](./fundermentals/04)            | Python, Variable, Data structure, Control structure, Function, Class|
-|05|[문자열, 파일 다루기](./fundermentals/05)            | Python, String, Text|
-|06|[파이썬 잘하는 척 해보기](./fundermentals/06)            | Advanced, Python |
-|07|[배열과 표](./fundermentals/07)            | Numpy, Array, Pandas, DataFrame |
-|08|[데이터 시각화](./fundermentals/08)            | Pandas, Matplotlib, Seaborn |
-|09|[데이터 전처리](./fundermentals/09)            | Feature Engineering, Encoding, Scaling, Feature Selection|
-|10|[전설의 포켓몬 찾기](./fundermentals/10)            | EDA |
-|11|[사이킷런으로 구현해보는 머신러닝](./fundermentals/11)            | scikit-learn |
+01_intro
+02_linux_terminal
+03_git_jupyter
+04_intro_python
+05_string_text
+06_intermediat_python
+07_numpy_pandas
+08_data_visualization
+09_data_preprocessing
+10_eda
+11_scikit-learn
+
+|01|[인공지능 개발자 첫 걸음](./fundermentals/01_intro)            | Ubuntu, Python, Tenrminal, Anaconda|
+|02|[터미널로 배우는 리눅스](./fundermentals/02_linux_terminal)            | Linux, Process, Thread, File System|
+|03|[개발자를 위한 첫 번째 필수 교양](./fundermentals/03_git_jupyter)            | Git, Jupyter notebook |
+|04|[파이썬으로 코딩 시작](./fundermentals/04_intro_python)            | Python, Variable, Data structure, Control structure, Function, Class|
+|05|[문자열, 파일 다루기](./fundermentals/05_string_text)            | Python, String, Text|
+|06|[파이썬 잘하는 척 해보기](./fundermentals/06_intermediate_python)            | Advanced, Python |
+|07|[배열과 표](./fundermentals/07_numpy_pandas)            | Numpy, Array, Pandas, DataFrame |
+|08|[데이터 시각화](./fundermentals/08_data_visualization)            | Pandas, Matplotlib, Seaborn |
+|09|[데이터 전처리](./fundermentals/09_data_preprocessing)            | Feature Engineering, Encoding, Scaling, Feature Selection|
+|10|[전설의 포켓몬 찾기](./fundermentals/10_eda)            | EDA |
+|11|[사이킷런으로 구현해보는 머신러닝](./fundermentals/11_scikit_learn)            | scikit-learn |
 
 ## 👨‍🚒 Explorations
 배운 지식들을 활용하여 다양한 모델을 구현합니다.
