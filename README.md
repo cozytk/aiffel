@@ -11,18 +11,6 @@
 
 |              |               Name                    |      Description        |
 |:------------:|:---------------------------------------------:|:----------------------:|
-01_intro
-02_linux_terminal
-03_git_jupyter
-04_intro_python
-05_string_text
-06_intermediat_python
-07_numpy_pandas
-08_data_visualization
-09_data_preprocessing
-10_eda
-11_scikit-learn
-
 |01|[인공지능 개발자 첫 걸음](./fundermentals/01_intro)            | Ubuntu, Python, Tenrminal, Anaconda|
 |02|[터미널로 배우는 리눅스](./fundermentals/02_linux_terminal)            | Linux, Process, Thread, File System|
 |03|[개발자를 위한 첫 번째 필수 교양](./fundermentals/03_git_jupyter)            | Git, Jupyter notebook |
