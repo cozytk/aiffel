@@ -1,5 +1,5 @@
 
-# 👨🏻‍🎓 What I've learned in aiffel
+# 👨🏻‍🎓 What I've learned at aiffel
 이 저장소는 aiffel에서 공부한 내용들을 저장한 저장소입니다
 
 ### 🤔 What is a aiffel?
