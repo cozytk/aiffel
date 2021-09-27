@@ -5,7 +5,7 @@
 
 아이펠은 [모두의연구소](https://modulabs.co.kr) 에서 만든 AI 혁신학교입니다.
 
-## 🔨 fundermentals
+## 🔨 Fundermentals
 인공지능을 학습하는 데에 필요한 필수적인 지식들을 배웁니다.
 
 |              |               Name                    |      Description        |
@@ -29,7 +29,7 @@
 |:------------:|:---------------------------------------------:|:--------:|:----------------------:|
 |01|[가위바위보 분류기](./explorations/01_rock_scissor_paper)            | Image Classification, CNN| Build first model to classify rock-scissor-paper
 
-## 👨‍👩‍👧‍👦 group_study
+## 👨‍👩‍👧‍👦 Group Study
 동료들과 함께 학습합니다.
 ### cs231n
 - 스탠포드 강의 cs231n 스터디입니다.
@@ -38,8 +38,8 @@
 |:------------:|:---------------------------------------------:|:----------------------:|
 |02|[Image Classification](./explorations/01_rock_scissor_paper)            | NN, k-NN, Wegiths Function
 
-### effiective python
+### Effiective Python
 - 도서 파이썬 코딩의 기술(Effictive Python) by Brett Slatkin 학습 스터디입니다.
 
-### linear algebra
+### Linear Algebra
 - 칸아카데미 [선형대수학](https://ko.khanacademy.org/math/linear-algebra) 스터디입니다.
