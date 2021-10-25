@@ -294,3 +294,5 @@ study/effectiv_python/080235/
 study/effectiv_python/.idea/
 .idea/
 venv/
+explorations/05_embedding/imagesets/
+explorations/05_embedding/imagesets/*
