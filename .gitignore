@@ -296,3 +296,4 @@ study/effectiv_python/.idea/
 venv/
 explorations/05_embedding/imagesets/
 explorations/05_embedding/imagesets/*
+.vscode/
