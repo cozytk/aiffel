@@ -11,36 +11,36 @@
 
 |              |               Name                    |      Description        |
 |:------------:|:---------------------------------------------:|:----------------------:|
-|01|[인공지능 개발자 첫 걸음](./fundermentals/01_intro)            | Ubuntu, Python, Tenrminal, Anaconda|
-|02|[터미널로 배우는 리눅스](./fundermentals/02_linux_terminal)            | Linux, Process, Thread, File System|
-|03|[개발자를 위한 첫 번째 필수 교양](./fundermentals/03_git_jupyter)            | Git, Jupyter notebook |
-|04|[파이썬으로 코딩 시작](./fundermentals/04_intro_python)            | Python, Variable, Data structure, Control structure, Function, Class|
-|05|[문자열, 파일 다루기](./fundermentals/05_string_text)            | Python, String, Text|
-|06|[파이썬 잘하는 척 해보기](./fundermentals/06_intermediate_python)            | Advanced, Python |
-|07|[배열과 표](./fundermentals/07_numpy_pandas)            | Numpy, Array, Pandas, DataFrame |
-|08|[데이터 시각화](./fundermentals/08_data_visualization)            | Pandas, Matplotlib, Seaborn |
-|09|[데이터 전처리](./fundermentals/09_data_preprocessing)            | Feature Engineering, Encoding, Scaling, Feature Selection|
-|10|[전설의 포켓몬 찾기](./fundermentals/10_eda)            | EDA |
-|11|[사이킷런으로 구현해보는 머신러닝](./fundermentals/11_scikit_learn)            | scikit-learn |
-|12|[파이썬으로 이미지 파일 다루기](./fundermentals/12_opencv)|OpenCV|
-|13|[파이썬 클래스](./fundermentals/13_oop)|Class, P|OOP|
-|14|[딥러닝과 신경망의 본질](./fundermentals/14_essence_of_DL_and_NN)|DL, NN|
-|15|[Numpy로 NN 구현](./fundermentals/15_my_own_deeplearning_library)|Numpy, CNN|
-|16|[선형 회귀와 로지스틱 회귀](./fundermentals/16_regression)|Linear Regression, Logistic Regression|
-|17|[비지도학습](./fundermentals/17_unsupervised_learning)|Unsupervised Learning|
-|18|[TF2 API 개요](./fundermentals/18_tf2_api)|TF2, Keras API, Model, Layer|
-|19|[딥네트워크](./fundermentals/)|CV, CNN, VGG, ResNet|
-|20|[딥러닝 레이어(1) Linear, Convolution](./fundermentals/20_layers)|Linear, Convolution|
-|21|[딥러닝 레이어(2) Embedding, Recurrent](./fundermentals/21_layers2)|Embedding, Recurrent|
-|22|[Regularization](./fundermentals/22_regularization)|L1,L2 regularization, Dropout, Batch Norm|
-|23|[활성화 함수의 이해](./fundermentals/23_activation_function)|Activation Function, Linear, Non-linear|
-|24|[Likelihood(MLE와 MAP)](./fundermentals/24_likelihood)|Prior, Posterior, Likelihood, MLE, MAP|
-|25|[정보이론 톺아보기](./fundermentals/25_infromation_theory)|Entropy, Cross Entropy, KL divergence|
-|26|[멀티 프로그래밍](./fundermentals/26_multi_programming)|Multi-Tasking,Programming,Threads,Process|
-|27|[데이터베이스](./fundermentals/)|Databasse, sqlite3|
-|28|[SQL](./fundermentals/28_sql)|SQL, sqlite3|
-|29|[데이터 크롤링](./fundermentals/29_data_crawling)|WEB, Data Crawling|
-|30|[데이터 전처리 웹 만들기](./fundermentals/30_data_preprocessing_app)|SQL, Flask, Data Preprocessing|
+|01|[인공지능 개발자 첫 걸음](./fundamentals/01_intro)            | Ubuntu, Python, Tenrminal, Anaconda|
+|02|[터미널로 배우는 리눅스](./fundamentals/02_linux_terminal)            | Linux, Process, Thread, File System|
+|03|[개발자를 위한 첫 번째 필수 교양](./fundamentals/03_git_jupyter)            | Git, Jupyter notebook |
+|04|[파이썬으로 코딩 시작](./fundamentals/04_intro_python)            | Python, Variable, Data structure, Control structure, Function, Class|
+|05|[문자열, 파일 다루기](./fundamentals/05_string_text)            | Python, String, Text|
+|06|[파이썬 잘하는 척 해보기](./fundamentals/06_intermediate_python)            | Advanced, Python |
+|07|[배열과 표](./fundamentals/07_numpy_pandas)            | Numpy, Array, Pandas, DataFrame |
+|08|[데이터 시각화](./fundamentals/08_data_visualization)            | Pandas, Matplotlib, Seaborn |
+|09|[데이터 전처리](./fundamentals/09_data_preprocessing)            | Feature Engineering, Encoding, Scaling, Feature Selection|
+|10|[전설의 포켓몬 찾기](./fundamentals/10_eda)            | EDA |
+|11|[사이킷런으로 구현해보는 머신러닝](./fundamentals/11_scikit_learn)            | scikit-learn |
+|12|[파이썬으로 이미지 파일 다루기](./fundamentals/12_opencv)|OpenCV|
+|13|[파이썬 클래스](./fundamentals/13_oop)|Class, P|OOP|
+|14|[딥러닝과 신경망의 본질](./fundamentals/14_essence_of_DL_and_NN)|DL, NN|
+|15|[Numpy로 NN 구현](./fundamentals/15_my_own_deeplearning_library)|Numpy, CNN|
+|16|[선형 회귀와 로지스틱 회귀](./fundamentals/16_regression)|Linear Regression, Logistic Regression|
+|17|[비지도학습](./fundamentals/17_unsupervised_learning)|Unsupervised Learning|
+|18|[TF2 API 개요](./fundamentals/18_tf2_api)|TF2, Keras API, Model, Layer|
+|19|[딥네트워크](./fundamentals/)|CV, CNN, VGG, ResNet|
+|20|[딥러닝 레이어(1) Linear, Convolution](./fundamentals/20_layers)|Linear, Convolution|
+|21|[딥러닝 레이어(2) Embedding, Recurrent](./fundamentals/21_layers2)|Embedding, Recurrent|
+|22|[Regularization](./fundamentals/22_regularization)|L1,L2 regularization, Dropout, Batch Norm|
+|23|[활성화 함수의 이해](./fundamentals/23_activation_function)|Activation Function, Linear, Non-linear|
+|24|[Likelihood(MLE와 MAP)](./fundamentals/24_likelihood)|Prior, Posterior, Likelihood, MLE, MAP|
+|25|[정보이론 톺아보기](./fundamentals/25_infromation_theory)|Entropy, Cross Entropy, KL divergence|
+|26|[멀티 프로그래밍](./fundamentals/26_multi_programming)|Multi-Tasking,Programming,Threads,Process|
+|27|[데이터베이스](./fundamentals/)|Databasse, sqlite3|
+|28|[SQL](./fundamentals/28_sql)|SQL, sqlite3|
+|29|[데이터 크롤링](./fundamentals/29_data_crawling)|WEB, Data Crawling|
+|30|[데이터 전처리 웹 만들기](./fundamentals/30_data_preprocessing_app)|SQL, Flask, Data Preprocessing|
 
 ## 👨‍🚒 Explorations
 배운 지식들을 활용하여 다양한 모델을 구현합니다.
